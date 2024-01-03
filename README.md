@@ -1,0 +1,1 @@
+Revamped the user interface for the software developed in Bank of Patel and implementing a Graphical User Interface (GUI) using JavaFX. The GUI should replace the TransactionManager class in Bank of Patel while retaining all the functionalities specified in Bank Of Patel. Additionally, a new feature is required to load accounts from a text file into the account database.
