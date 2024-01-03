@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<VBox prefHeight="720.0" prefWidth="540.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bank_of_patel.BankOfPatelController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <AmbientLight lightOn="true">
+      <color>
+         <Color green="1.0" blue="0.5379319787025452" />
+      </color>
+   </AmbientLight>
+   <TabPane cacheShape="false" prefHeight="429.0" prefWidth="500.0" tabClosingPolicy="UNAVAILABLE">
+     <tabs>
+       <Tab text="Open/Close">
+         <content>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="305.0" prefWidth="500.0">
+                  <children>
+                     <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="365.0" prefWidth="500.0">
+                        <children>
+                            <Label text="Enter First Name">
+                              <VBox.margin>
+                                 <Insets top="10.0" />
+                              </VBox.margin></Label>
+                            <TextField fx:id="firstNameInOpenClose" promptText="First Name">
+                              <VBox.margin>
+                                 <Insets top="5.0" />
+                              </VBox.margin></TextField>
+                            <Label text="Enter Last Name">
+                              <VBox.margin>
+                                 <Insets top="10.0" />
+                              </VBox.margin></Label>
+                            <TextField fx:id="lastNameInOpenClose" promptText="Last Name">
+                                <VBox.margin>
+                                    <Insets top="5.0" />
+                                </VBox.margin></TextField>
+                           <HBox spacing="30.0">
+                              <children>
+                                 <VBox>
+                                    <children>
+                                       <Label text="Pick Date of Birth" />
+                                       <DatePicker fx:id="dobInOpenClose" editable="false" promptText="Date of Birth">
+                                          <VBox.margin>
+                                             <Insets top="5.0" />
+                                          </VBox.margin>
+                                       </DatePicker>
+                                    </children>
+                                 </VBox>
+                                 <VBox layoutX="10.0" layoutY="10.0">
+                                    <children>
+                                       <Label text="Initial Deposit" />
+                                       <TextField fx:id="initialAmount" promptText="Initial Deposit in $">
+                                          <VBox.margin>
+                                             <Insets top="5.0" />
+                                          </VBox.margin>
+                                       </TextField>
+                                    </children>
+                                 </VBox>
+                              </children>
+                              <VBox.margin>
+                                 <Insets top="10.0" />
+                              </VBox.margin>
+                           </HBox>
+                           <Separator prefHeight="17.0" prefWidth="480.0">
+                              <VBox.margin>
+                                 <Insets top="10.0" />
+                              </VBox.margin></Separator>
+                           <Label layoutX="20.0" layoutY="88.0" text="Pick Account Type">
+                              <VBox.margin>
+                                 <Insets top="5.0" />
+                              </VBox.margin></Label>
+                           <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="25.0">
+                              <children>
+                                 <RadioButton accessibleText="C" mnemonicParsing="false" onAction="#onMouseClickCheckingOrMM" text="Checking">
+                                    <toggleGroup>
+                                       <ToggleGroup fx:id="accountTypeGroup" />
+                                    </toggleGroup></RadioButton>
+                                 <RadioButton accessibleText="S" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#onMouseClickSavings" text="Savings" toggleGroup="$accountTypeGroup" />
+                                 <RadioButton accessibleText="CC" layoutX="101.0" layoutY="10.0" mnemonicParsing="false" onAction="#onMouseClickCollegeChecking" text="College Checking" toggleGroup="$accountTypeGroup" />
+                                 <RadioButton accessibleText="MM" layoutX="191.0" layoutY="10.0" mnemonicParsing="false" onAction="#onMouseClickCheckingOrMM" text="Money Market" toggleGroup="$accountTypeGroup" />
+                              </children>
+                              <VBox.margin>
+                                 <Insets top="5.0" />
+                              </VBox.margin>
+                           </HBox>
+                            <Label layoutX="20.0" layoutY="88.0" text="Pick Campus Location">
+                              <VBox.margin>
+                                 <Insets top="10.0" />
+                              </VBox.margin></Label>
+                            <HBox fx:id="campusLocationHBox" alignment="CENTER_LEFT" disable="true" prefWidth="200.0" spacing="25.0">
+                                <children>
+                                    <RadioButton accessibleText="0" mnemonicParsing="false" text="New Brunswick">
+                                        <toggleGroup>
+                                            <ToggleGroup fx:id="campusLocation" />
+                                        </toggleGroup></RadioButton>
+                                    <RadioButton accessibleText="1" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Newark" toggleGroup="$campusLocation" />
+                                    <RadioButton accessibleText="2" layoutX="101.0" layoutY="10.0" mnemonicParsing="false" text="Camden" toggleGroup="$campusLocation" />
+                                </children>
+                                <VBox.margin>
+                                    <Insets top="5.0" />
+                                </VBox.margin>
+                            </HBox>
+                            <Label layoutX="20.0" layoutY="88.0" text="Loyalty Status">
+                                <VBox.margin>
+                                    <Insets top="10.0" />
+                                </VBox.margin></Label>
+                           <VBox fx:id="loyaltyVBox" disable="true">
+                              <VBox.margin>
+                                 <Insets top="5.0" />
+                              </VBox.margin>
+                              <children>
+                                 <CheckBox fx:id="loyaltyCheckBox" mnemonicParsing="false" text="Loyal?" />
+                              </children>
+                           </VBox>
+                           <Separator layoutX="20.0" layoutY="136.0" prefHeight="17.0" prefWidth="480.0">
+                              <VBox.margin>
+                                 <Insets top="10.0" />
+                              </VBox.margin>
+                           </Separator>
+                           <HBox alignment="CENTER" spacing="40.0">
+                              <VBox.margin>
+                                 <Insets top="7.0" />
+                              </VBox.margin>
+                              <children>
+                                 <Button mnemonicParsing="false" onAction="#onOpen" text="Open" />
+                                 <Button layoutX="226.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClose" text="Close" />
+                                 <Button layoutX="250.0" layoutY="10.0" mnemonicParsing="false" onAction="#onClear" text="Clear" />
+                              </children>
+                           </HBox>
+                           <Separator layoutX="20.0" layoutY="292.0" prefHeight="17.0" prefWidth="480.0">
+                              <VBox.margin>
+                                 <Insets top="10.0" />
+                              </VBox.margin>
+                           </Separator>
+                        </children>
+                        <padding>
+                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        </padding>
+                     </VBox>
+                  </children></AnchorPane>
+         </content>
+       </Tab>
+       <Tab text="Transactions">
+         <content>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                   <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="365.0" prefWidth="500.0">
+                       <children>
+                           <Label text="Enter First Name">
+                               <VBox.margin>
+                                   <Insets top="10.0" />
+                               </VBox.margin></Label>
+                           <TextField fx:id="firstNameInDepWith" promptText="First Name">
+                               <VBox.margin>
+                                   <Insets top="5.0" />
+                               </VBox.margin></TextField>
+                           <Label text="Enter Last Name">
+                               <VBox.margin>
+                                   <Insets top="10.0" />
+                               </VBox.margin></Label>
+                           <TextField fx:id="lastNameInDepWith" promptText="Last Name">
+                               <VBox.margin>
+                                   <Insets top="5.0" />
+                               </VBox.margin></TextField>
+                           <Label layoutX="20.0" layoutY="88.0" text="Pick Date of Birth">
+                               <VBox.margin>
+                                   <Insets top="10.0" />
+                               </VBox.margin>
+                           </Label>
+                           <DatePicker fx:id="dobInDepWith" editable="false" promptText="Date of Birth">
+                               <VBox.margin>
+                                   <Insets top="5.0" />
+                               </VBox.margin>
+                           </DatePicker>
+                           <Separator prefHeight="17.0" prefWidth="480.0">
+                               <VBox.margin>
+                                   <Insets top="10.0" />
+                               </VBox.margin></Separator>
+                           <Label layoutX="20.0" layoutY="88.0" text="Pick Account Type">
+                               <VBox.margin>
+                                   <Insets top="5.0" />
+                               </VBox.margin></Label>
+                           <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="25.0">
+                               <children>
+                                   <RadioButton accessibleText="C" mnemonicParsing="false" text="Checking" toggleGroup="$accountTypeGroup" />
+                                   <RadioButton accessibleText="S" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" text="Savings" toggleGroup="$accountTypeGroup" />
+                                   <RadioButton accessibleText="CC" layoutX="101.0" layoutY="10.0" mnemonicParsing="false" text="College Checking" toggleGroup="$accountTypeGroup" />
+                                   <RadioButton accessibleText="MM" layoutX="191.0" layoutY="10.0" mnemonicParsing="false" text="Money Market" toggleGroup="$accountTypeGroup" />
+                               </children>
+                               <VBox.margin>
+                                   <Insets top="5.0" />
+                               </VBox.margin>
+                           </HBox>
+                           <HBox alignment="CENTER" prefWidth="200.0">
+                              <children>
+                                 <Label text="Amount: $" />
+                                 <TextField fx:id="changeAmount" promptText="Enter Amount">
+                                    <HBox.margin>
+                                       <Insets left="10.0" />
+                                    </HBox.margin>
+                                 </TextField>
+                              </children>
+                              <VBox.margin>
+                                 <Insets top="10.0" />
+                              </VBox.margin>
+                           </HBox>
+
+                           <Separator layoutX="20.0" layoutY="136.0" prefHeight="17.0" prefWidth="480.0">
+                               <VBox.margin>
+                                   <Insets top="10.0" />
+                               </VBox.margin>
+                           </Separator>
+                           <HBox alignment="CENTER" spacing="40.0">
+                               <VBox.margin>
+                                   <Insets />
+                               </VBox.margin>
+                               <children>
+                                   <Button mnemonicParsing="false" onAction="#onDeposit" text="Deposit" />
+                                   <Button layoutX="226.0" layoutY="10.0" mnemonicParsing="false" onAction="#onWithdraw" text="Withdraw" />
+                               </children>
+                           </HBox>
+                           <Separator layoutX="20.0" layoutY="292.0" prefHeight="17.0" prefWidth="480.0">
+                               <VBox.margin>
+                                   <Insets top="5.0" />
+                               </VBox.margin>
+                           </Separator>
+                       </children>
+                       <padding>
+                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                       </padding>
+                   </VBox>
+               </children>
+           </AnchorPane>
+         </content>
+       </Tab>
+         <Tab text="Database">
+             <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="365.0" prefWidth="500.0">
+                        <children>
+                           <GridPane vgap="10.0">
+                             <columnConstraints>
+                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                             </columnConstraints>
+                             <rowConstraints>
+                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                             </rowConstraints>
+                              <children>
+                                 <VBox alignment="CENTER">
+                                    <children>
+                                       <Button mnemonicParsing="false" onAction="#onPrintAll" text="Print all Accounts" />
+                                    </children>
+                                 </VBox>
+                                 <VBox alignment="CENTER" GridPane.columnIndex="1">
+                                    <children>
+                                       <Button mnemonicParsing="false" onAction="#onApplyIntAndFees" text="Update all accounts" />
+                                    </children>
+                                 </VBox>
+                                 <VBox alignment="CENTER" GridPane.rowIndex="1">
+                                    <children>
+                                       <Button mnemonicParsing="false" onAction="#onPrintAllWithIntAndFee" text="Print all Interests and Fees">
+                                          <VBox.margin>
+                                             <Insets />
+                                          </VBox.margin></Button>
+                                    </children>
+                                 </VBox>
+                                 <VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                       <Button mnemonicParsing="false" onAction="#onUpload" text="Upload from file">
+                                          <VBox.margin>
+                                             <Insets />
+                                          </VBox.margin></Button>
+                                    </children>
+                                 </VBox>
+                              </children>
+                              <padding>
+                                 <Insets top="10.0" />
+                              </padding>
+                           </GridPane>
+                        </children>
+                        <padding>
+                           <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                        </padding>
+                     </VBox>
+                  </children></AnchorPane>
+             </content>
+         </Tab>
+     </tabs>
+   </TabPane>
+   <VBox prefHeight="230.0" prefWidth="500.0" spacing="10.0">
+      <children>
+         <Label text="Console" />
+         <TextArea fx:id="console" editable="false" onInputMethodTextChanged="#onConsoleTextUpdated" prefHeight="202.0" prefWidth="500.0" text="Welcome to the Bank Of Patel" />
+      </children>
+   </VBox>
+</VBox>
